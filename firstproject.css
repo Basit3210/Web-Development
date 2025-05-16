@@ -1,0 +1,78 @@
+.btn-group{
+    background-color: aliceblue;
+}
+ h1{
+    padding-top: 30px;
+    font-size: 80px;
+    font-weight: 400;
+}
+h1 span{
+    color: blue;
+}
+ h4{
+    padding-top: 10px;
+    color: rgb(56, 52, 52);
+}
+ button{
+    margin-top: 20px;
+    background-color: blue;
+    padding: 15px 30px 15px 30px;
+    font-weight: 400;
+    color: white;
+}
+.img img{
+    padding-top: 35px;
+}
+.group button{
+    border-radius: 35px;
+    border: 3px solid white;
+    background-color: rgb(224, 229, 229);
+    color: black;
+    font-size: larger;
+    box-shadow: 2px 2px 2px 2px black;
+    padding: 5px;
+    margin: 10px;
+}
+.group button.active{
+    background-color: blue;
+    color: white;
+}
+.group button:hover{
+    background-color: blue;
+    color: white;
+}
+.container{
+    /* background-image: url(a4-1024x768.png); */
+    
+    background: rgb(245, 238, 238);
+
+    margin-top: 35px;
+}
+.container p{
+    padding-top: 10px;
+    font-size: 25px;
+}
+.container i{
+    color: blue;
+    padding-right: 25px;
+}
+.container h5{
+    /* padding-left: 35px; */
+    /* display: flex; */
+}
+
+.container-fluid h1,p{
+    text-align: center;
+    align-items: center;
+}
+.container-fluid .card{
+    background-color: rgb(14, 14, 133);
+    color: white;
+    margin-bottom: 40px;
+}
+.card p{
+    color: rgb(198, 185, 185);
+}
+.card h5{
+    font-weight: 600;
+}

@@ -1,0 +1,172 @@
+*{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family:"poppins",sans-serif;
+}
+body{
+    background: #e5e5e7;
+}
+.wrap{
+    display: flex;
+}
+nav{
+    width: 95px;
+    height: 100vh;
+    background: #fff;
+    transition: 0.5s ease-out;
+    overflow: hidden;
+}
+nav:hover{
+    width: 260px;
+}
+.navbar{
+    padding: 1rem;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease-out;
+    overflow: hidden;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.logo img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+.logo span{
+    font-size: 15px;
+    color: rgb(39, 39, 39);
+    font-weight: bold;
+    padding-left: 15px;
+    text-transform: uppercase;
+}
+.navbar a{
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    color: rgb(39, 39, 39);
+    font-weight: 500;
+    overflow: hidden;
+}
+.navbar i{
+    font-size: 1.2rem;
+    color: rgb(104, 103, 103);
+    margin: 0 1.8rem 0 0.3rem;
+}
+.navbar a:hover{
+    background: rgb(238, 237, 237);
+    border-radius: 10px;
+    transition: 0.3s ease-out;
+    letter-spacing: .5px;
+}
+.logout{
+    position: absolute;
+    bottom: 20px;
+}
+.logout i{
+    padding-right: 1rem;
+}
+.main-body{
+    width: 100%;
+    padding: 1.5rem 2rem;
+}
+.header h1{
+    margin: 1.3rem 0;
+    color: rgb(38, 68, 68);
+
+}
+.wrapper{
+    display: flex;
+    justify-content: space-around;
+}
+.card{
+    width: 180px;
+    border-radius: 10px;
+    border: 3px solid #fff;
+    padding: 1rem;
+}
+.card img{
+    width: 60px;
+    height: 60px;
+    margin-bottom: 2rem;   
+}
+.card h3{
+    font-size: 2rem;
+}
+.card span{
+    font-size: 12px;
+    color: gray;
+}
+.card .more{
+    display: flex;
+    justify-content: end;
+}
+.more button{
+    font-size: 1rem;
+    background: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+.card:hover{
+    background: #fff;
+    transition: 0.5s ease-out;
+}
+.sidebar{
+    width: 350px;
+    padding: 2rem;
+    background-color: #fff;
+}
+.sidebar .item-link{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    background: #e5e5e7;
+    border-radius: 20px;
+    gap: 10px;
+}
+.box img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.item-link a{
+    padding: 10px 1rem;
+    color: gray;
+}
+.item-link:hover,
+.item-link .active{
+color: #fff;
+border-radius: 10px;
+background: rgb(75, 75, 179);
+
+}
+.box{
+    display: flex;
+    gap: 10px;
+    margin-top: 2rem;
+}
+.text p{
+    font-size: 10px;
+}
+.text span{
+    font-size: 10px;
+    color: gray;
+}
+.graph-box{
+    background: #fff;
+    border-radius: 20px;
+    padding: 2rem;
+    margin-top: 20px;
+}

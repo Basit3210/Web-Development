@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign-Up/Login Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      background: white;
+      margin: auto;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    form div {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+
+    .toggle {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .toggle a {
+      color: #007BFF;
+      cursor: pointer;
+    }
+
+    #welcomeSection {
+      display: none;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div id="signupSection">
+    <h2>Sign Up</h2>
+    <form id="signupForm" method="POST" action="javascript:void(0);">
+      <div>
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" required />
+      </div>
+
+      <div>
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" required />
+      </div>
+
+      <div>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required />
+      </div>
+
+      <div>
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" required />
+      </div>
+
+      <div>
+        <label for="gender">Gender</label>
+        <select id="gender" required>
+          <option value="">--Select--</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="password">Password</label>
+        <input type="password" id="password" required />
+      </div>
+
+      <div>
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" required />
+      </div>
+
+      <div class="error" id="errorMsg"></div>
+
+      <button type="submit">Register</button>
+    </form>
+    <div class="toggle">Already have an account? <a onclick="toggleForms()">Login</a></div>
+  </div>
+
+  <div id="loginSection" style="display:none;">
+    <h2>Login</h2>
+    <form id="loginForm" method="POST" action="javascript:void(0);">
+      <div>
+        <label for="loginEmail">Email Address</label>
+        <input type="email" id="loginEmail" required />
+      </div>
+      <div>
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" required />
+      </div>
+      <div class="error" id="loginError"></div>
+      <button type="submit">Login</button>
+    </form>
+    <div class="toggle">New user? <a onclick="toggleForms()">Sign Up</a></div>
+  </div>
+
+  <div id="welcomeSection">
+    <h2 id="welcomeMessage"></h2>
+    <button onclick="logout()">Logout</button>
+  </div>
+</div>
+
+<script>
+  const signupForm = document.getElementById('signupForm');
+  const loginForm = document.getElementById('loginForm');
+  const errorMsg = document.getElementById('errorMsg');
+  const loginError = document.getElementById('loginError');
+  const signupSection = document.getElementById('signupSection');
+  const loginSection = document.getElementById('loginSection');
+  const welcomeSection = document.getElementById('welcomeSection');
+  const welcomeMessage = document.getElementById('welcomeMessage');
+
+  let existingUsers = JSON.parse(localStorage.getItem('users')) || [];
+
+  function toggleForms() {
+    signupSection.style.display = signupSection.style.display === 'none' ? 'block' : 'none';
+    loginSection.style.display = loginSection.style.display === 'none' ? 'block' : 'none';
+    errorMsg.textContent = '';
+    loginError.textContent = '';
+  }
+
+  signupForm.addEventListener('submit', function(e) {
+    e.preventDefault();  // Prevent default form submission
+
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const email = document.getElementById('email').value.trim().toLowerCase();
+    const phone = document.getElementById('phone').value.trim();
+    const gender = document.getElementById('gender').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    if (!firstName || !lastName || !email || !phone || !gender || !password || !confirmPassword) {
+      errorMsg.textContent = 'Please fill in all fields.';
+      return;
+    }
+
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+    if (!passwordRegex.test(password)) {
+      errorMsg.textContent = 'Password must be at least 8 characters long and include uppercase, lowercase, number, and special character.';
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      errorMsg.textContent = 'Passwords do not match.';
+      return;
+    }
+
+    const isDuplicate = existingUsers.some(user => user.email === email || user.phone === phone);
+
+    if (isDuplicate) {
+      errorMsg.textContent = 'Email or phone number already exists.';
+      return;
+    }
+
+    errorMsg.textContent = '';
+
+    const newUser = { firstName, lastName, email, phone, gender, password };
+    existingUsers.push(newUser);
+    localStorage.setItem('users', JSON.stringify(existingUsers));
+
+    signupForm.reset();
+  });
+
+  loginForm.addEventListener('submit', function(e) {
+    e.preventDefault();  // Prevent default form submission
+
+    const email = document.getElementById('loginEmail').value.trim().toLowerCase();
+    const password = document.getElementById('loginPassword').value;
+
+    const user = existingUsers.find(u => u.email === email && u.password === password);
+
+    if (!user) {
+      loginError.textContent = 'Invalid email or password.';
+      return;
+    }
+
+    loginError.textContent = '';
+    welcomeMessage.textContent = `Welcome, ${user.firstName} ${user.lastName}!`;
+    signupSection.style.display = 'none';
+    loginSection.style.display = 'none';
+    welcomeSection.style.display = 'block';
+  });
+
+  function logout() {
+    welcomeSection.style.display = 'none';
+    signupSection.style.display = 'none';
+    loginSection.style.display = 'block';
+    loginForm.reset();
+  }
+</script>
+
+</body>
+</html>

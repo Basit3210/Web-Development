@@ -1,0 +1,85 @@
+#navbarNav{
+    justify-content: center;
+}
+.navbar li a{
+    /* background-color: black; */
+    color: white;
+    transition: all .5s ease-in-out;
+} 
+.navbar li a:hover{
+    font-size: large;
+    text-decoration: underline;
+    color: rgb(138, 5, 255);
+    text-decoration-color: rgb(255, 255, 255);
+    opacity: .8;
+    /* transition-duration: 1s ease; */
+}
+.container-fluid button{
+    /* color: white; */
+    background: white;
+}
+
+.carousel-caption h4{
+     
+    font-size: 35px;
+    font-weight: 600;
+}
+.carousel-caption h5{
+    font-size: 70px;
+}
+.carousel-caption span{
+    color: rgb(219, 50, 194);
+}
+.carousel-caption h6{
+    font-size: 25px;
+    font-weight: 400;
+}
+.carousel-caption{
+    margin-bottom: 220px;
+}
+
+
+.carousel-caption i{
+    font-size: 30px;
+    color: white;
+    padding: 10px;
+    transition: all .5s ease-in-out;
+
+}
+.carousel-caption i:hover{
+    color: blue;
+    transition: all .5s ease-in-out;
+
+}
+.card-body h5{
+    font-size: 60px;
+    font-weight: 600;
+    display: flex;
+    margin-top: 30px;
+    margin-left: 20px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: blue;
+}
+.card-body p{
+    font-size: large;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+.img-fluid{
+    margin-top: 50px;
+    
+}
+.card i{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    padding-top: 40px;
+}
+
+

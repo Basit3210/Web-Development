@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="Signup.css">
+    <script src="Signup.js"></script>
+
+    <style>
+
+    body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background: #f9f9f9;
+      }
+    
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+    
+      form {
+        max-width: 500px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+    
+      form .form-group {
+        margin-bottom: 15px;
+      }
+    
+      form label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+    
+      form input, form select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+    
+      form button {
+        padding: 10px 15px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+      }
+    
+      form button:hover {
+        background-color: #45a049;
+      }
+    
+      table {
+        width: 90%;
+        margin: 30px auto;
+        border-collapse: collapse;
+        background: white;
+      }
+    
+      table, th, td {
+        border: 1px solid #ccc;
+      }
+    
+      th, td {
+        padding: 10px;
+        text-align: center;
+      }
+    
+      th {
+        background-color: #f2f2f2;
+      }
+    
+      .error {
+        color: red;
+        font-size: 0.9em;
+        margin-top: -10px;
+        margin-bottom: 10px;
+      }
+<head>
+  <meta charset="UTF-8">
+  <title>Sign-Up Form</title>
+
+  
+ </style>
+
+  
+</head>
+<body>
+
+  <h2>Sign-Up Form</h2>
+  <form id="signupForm">
+    <div class="form-group">
+      <label for="firstName">First Name *</label>
+      <input type="text" id="firstName" name="firstName">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name *</label>
+      <input type="text" id="lastName" name="lastName">
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address *</label>
+      <input type="email" id="email" name="email">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone Number *</label>
+      <input type="tel" id="phone" name="phone">
+    </div>
+
+    <div class="form-group">
+      <label for="gender">Gender *</label>
+      <select id="gender" name="gender">
+        <option value="">--Select Gender--</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password *</label>
+      <input type="password" id="password" name="password">
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Confirm Password *</label>
+      <input type="password" id="confirmPassword" name="confirmPassword">
+    </div>
+
+    <div class="error" id="errorMsg"></div>
+
+    <button type="submit">Sign Up</button>
+  </form>
+
+  <div id="userTableContainer"></div>
+
+
+<script>
+  
+  const form = document.getElementById('signupForm');
+  const errorMsg = document.getElementById('errorMsg');
+  const tableContainer = document.getElementById('userTableContainer');
+  let tableCreated = false;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Grab values
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const gender = document.getElementById('gender').value;
+    const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirmPassword').value;
+
+    // Validate
+    if (!firstName || !lastName || !email || !phone || !gender || !password || !confirmPassword) {
+      errorMsg.textContent = "Please fill in all fields.";
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      errorMsg.textContent = "Passwords do not match.";
+      return;
+    }
+
+    errorMsg.textContent = "";
+
+    // Create table if not created
+    if (!tableCreated) {
+      const table = document.createElement('table');
+      table.id = "userTable";
+      const header = `
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Gender</th>
+        </tr>`;
+      table.innerHTML = header;
+      tableContainer.appendChild(table);
+      tableCreated = true;
+    }
+
+    // Append data row
+    const table = document.getElementById('userTable');
+    const row = table.insertRow();
+    row.innerHTML = `
+      <td>${firstName}</td>
+      <td>${lastName}</td>
+      <td>${email}</td>
+      <td>${phone}</td>
+      <td>${gender}</td>
+    `;
+
+    // Reset form
+    form.reset();
+  });
+</script>
+
+</body>
+
+  
+</body>
+</html>
