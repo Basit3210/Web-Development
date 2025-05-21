@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Basit Wali | Skills</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body {
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+      color: #333;
+    }
+    header {
+      background: #1a1a1a;
+      padding: 20px 40px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 { font-size: 24px; }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #00bcd4;
+    }
+    section.skills {
+      background: white;
+      margin: 40px auto;
+      max-width: 800px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 40px;
+      min-height: 70vh;
+      animation: fadeIn 1s ease-in-out;
+    }
+    .skills h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #1a1a1a;
+      text-align: center;
+    }
+    section.skills ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    section.skills ul li {
+      background: #00bcd4;
+      color: white;
+      padding: 12px 20px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      font-size: 18px;
+      box-shadow: 0 4px 10px rgba(0,188,212,0.3);
+      transition: transform 0.2s;
+    }
+    section.skills ul li:hover {
+      transform: scale(1.03);
+    }
+    .note {
+      text-align: center;
+      margin-top: 30px;
+      font-style: italic;
+      color: #555;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1a1a1a;
+      color: white;
+      margin-top: 40px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Basit Wali</h1>
+    <nav>
+      <a href="portfolio02.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="skills">
+    <h2>My Skills</h2>
+    <ul>
+      <li>HTML5 & CSS3</li>
+      <li>JavaScript (Vanilla)</li>
+      <li>Responsive Web Design</li>
+      <li>Form Validation & Local Storage</li>
+      <li>Basic Git & GitHub</li>
+      <li>UI/UX Design Principles</li>
+      <li>Basic Debugging & Dev Tools</li>
+    </ul>
+    <p class="note">Always learning and improving to become a full-stack developer!</p>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ by Basit Wali &copy; 2025</p>
+  </footer>
+</body>
+</html>

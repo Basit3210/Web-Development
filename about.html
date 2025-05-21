@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Basit Wali | About</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body {
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      color: #333;
+    }
+    header {
+      background: #1a1a1a;
+      padding: 20px 40px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 { font-size: 24px; }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #00bcd4;
+    }
+    section.about {
+      background: rgba(255, 255, 255, 0.95);
+      margin: 40px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 40px;
+      min-height: 75vh;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+    .about h2 {
+      font-size: 32px;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+    }
+    .about p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .about ul {
+      margin-top: 20px;
+      padding-left: 20px;
+      list-style: disc;
+    }
+    .about ul li {
+      margin-bottom: 10px;
+      font-size: 17px;
+    }
+    .highlight-box {
+      background: #00bcd4;
+      color: white;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(0, 188, 212, 0.4);
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1a1a1a;
+      color: white;
+      margin-top: 40px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Basit Wali</h1>
+    <nav>
+      <a href="portfolio02.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="about">
+    <h2>About Me</h2>
+    <p>I am a passionate and creative web developer based in [Your City], with a strong desire to turn ideas into digital reality. I love to build websites that are both visually appealing and functional, focusing on clean design and responsive layouts.</p>
+    <p>Currently expanding my skills in JavaScript and responsive web development. My goal is to become a full-stack developer and contribute to meaningful projects.</p>
+    <ul>
+      <li>💡 Problem Solver & Fast Learner</li>
+      <li>🌐 Experienced with HTML, CSS, and JavaScript</li>
+      <li>🎯 Focused on creating responsive and user-friendly interfaces</li>
+      <li>👨‍💻 Comfortable working in teams and independently</li>
+      <li>🚀 Always hungry to learn more and grow</li>
+    </ul>
+    <div class="highlight-box">
+      "The best way to predict the future is to create it."
+    </div>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ by Basit Wali &copy; 2025</p>
+  </footer>
+</body>
+</html>

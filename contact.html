@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Basit Wali | Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body {
+      background: linear-gradient(to right, #d9a7c7, #fffcdc);
+      color: #333;
+    }
+    header {
+      background: #1a1a1a;
+      padding: 20px 40px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 { font-size: 24px; }
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #00bcd4;
+    }
+    section.contact {
+      background: white;
+      margin: 40px auto;
+      max-width: 800px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 40px;
+      min-height: 70vh;
+      animation: slideIn 1.2s ease-in-out;
+    }
+    .contact h2 {
+      font-size: 32px;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+    }
+    .contact p {
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+    .social-links {
+      margin-top: 30px;
+    }
+    .social-links a {
+      display: inline-block;
+      margin-right: 15px;
+      font-size: 20px;
+      text-decoration: none;
+      color: #1a1a1a;
+      transition: 0.3s;
+    }
+    .social-links a:hover {
+      color: #00bcd4;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #1a1a1a;
+      color: white;
+      margin-top: 40px;
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Basit Wali</h1>
+    <nav>
+      <a href="portfolio02.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="contact">
+    <h2>Contact Me</h2>
+    <p><strong>Email:</strong> yourname@example.com</p>
+    <p><strong>Phone:</strong> +123456789</p>
+    <p><strong>Location:</strong> [Your City, Country]</p>
+
+    <div class="social-links">
+      <h3>Find me on:</h3>
+      <a href="https://github.com/yourgithub" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourlinkedin" target="_blank">LinkedIn</a>
+      <a href="https://twitter.com/yourtwitter" target="_blank">Twitter</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ by Basit Wali &copy; 2025</p>
+  </footer>
+</body>
+</html>
